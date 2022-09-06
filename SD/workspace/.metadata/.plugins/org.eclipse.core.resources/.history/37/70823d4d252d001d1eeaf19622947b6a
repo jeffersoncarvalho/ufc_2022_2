@@ -1,0 +1,37 @@
+package ufcqx.serverthreadaula.server;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Scanner;
+
+//TRATADOR DE CLIENTES SOCKETS
+public class ServerScannerWorkerThread extends Thread {
+
+	private Socket client;
+	private int id;
+
+	public ServerScannerWorkerThread(Socket client, int id) {
+		this.client = client;
+		this.id = id;
+	}
+
+	@Override
+	public void run() {
+		Scanner in;
+		try {
+			in = new Scanner(this.client.getInputStream());
+			while (in.hasNextLine()) {
+				System.out.println(
+						client.getInetAddress().getHostAddress() +
+						" ["
+						+ this.id
+						+ "] >>> " +
+						in.nextLine());
+			}
+			in.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

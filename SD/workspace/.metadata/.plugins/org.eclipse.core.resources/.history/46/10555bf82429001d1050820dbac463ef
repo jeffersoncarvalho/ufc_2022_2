@@ -1,0 +1,6 @@
+package ufcqx.serverthreadaula;
+
+//TRATADOR DE CLIENTES SOCKETS
+public class ServerScannerWorkerThread {
+
+}

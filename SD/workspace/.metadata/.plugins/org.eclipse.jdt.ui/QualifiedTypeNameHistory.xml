@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.net.ServerSocket"/>
+    <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+    <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+    <fullyQualifiedTypeName name="ufcqx.object.Person"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="ufcqx.scanner.ServerScanner"/>
+    <fullyQualifiedTypeName name="ufcqx.object.ServerObject"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+    <fullyQualifiedTypeName name="java.awt.event.WindowAdapter"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="ufcqx.scanner.ClientScanner"/>
+    <fullyQualifiedTypeName name="ufcqx.threads.WorkerThread"/>
+    <fullyQualifiedTypeName name="ufcqx.servethread.ClientThread"/>
+    <fullyQualifiedTypeName name="ufcqx.servethread.ServerScannerThread"/>
+    <fullyQualifiedTypeName name="ufcqx.oo.Circulo"/>
+    <fullyQualifiedTypeName name="ufcqx.oo.Figura"/>
+    <fullyQualifiedTypeName name="ufcqx.oo.Quadrado"/>
+    <fullyQualifiedTypeName name="java.net.Socket"/>
+    <fullyQualifiedTypeName name="ufcqx.serverthreadaula.ServerScannerWorkerThread"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.io.PrintStream"/>
+</qualifiedTypeNameHistroy>
