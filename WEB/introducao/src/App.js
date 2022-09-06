@@ -5,6 +5,7 @@ import Estudante from "./components/Estudante"
 //import {Vecna as V,Eleven, Will} from "./components/StrangerThings"
 import * as StrangerThings from "./components/StrangerThings"
 import Calculadora from './components/Calculadora';
+import IMC from './components/IMC';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       />
       <StrangerThings.Vecna />
       <Calculadora op="SUB" x={10} y={20} />
+      <IMC peso={80.10} altura ={1.7} />
     </div>
   );
 }
