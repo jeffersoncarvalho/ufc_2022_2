@@ -4,6 +4,7 @@ import OlaMundo from "./components/OlaMundo"
 import Estudante from "./components/Estudante"
 //import {Vecna as V,Eleven, Will} from "./components/StrangerThings"
 import * as StrangerThings from "./components/StrangerThings"
+import Calculadora from './components/Calculadora';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         universidade="UFC Quixadá" 
       />
       <StrangerThings.Vecna />
+      <Calculadora op="SUB" x={10} y={20} />
     </div>
   );
 }
