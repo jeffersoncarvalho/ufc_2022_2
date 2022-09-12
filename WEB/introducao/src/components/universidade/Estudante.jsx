@@ -18,13 +18,14 @@ import React from "react"
     )
 }*/
 
-const estudante = ({nome,curso,universidade}) => {
+const estudante = ({nome,curso,universidade,disciplina}) => {
     
     return (
         <div>
             Nome: {nome}<br />
             Curso: {curso}<br />
             Universidade: {universidade}<br />
+            Disciplina: {disciplina}
         </div>
     )
 }
