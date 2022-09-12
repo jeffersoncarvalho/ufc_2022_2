@@ -1,15 +1,35 @@
 import './App.css';
 
 //import OlaMundo from "./components/OlaMundo"
-//import Estudante from "./components/Estudante"
+import Estudante from './components/universidade/Estudante'
 //import {Vecna as V,Eleven, Will} from "./components/StrangerThings"
 //import * as StrangerThings from "./components/StrangerThings"
 //import Calculadora from './components/Calculadora';
 //import IMC from './components/IMC';
 import Grupo from './components/vingadores/Grupo';
 import Heroi from './components/vingadores/Heroi';
+import Disciplina from './components/universidade/Disciplina';
 
 function App() {
+  return (
+    <div className="App">
+      <Disciplina titulo='Fundamentos de Programação'>
+        <Estudante
+          nome="Jefferson"
+          curso="Design Digital"
+          universidade="UFC Quixadá"
+        />
+        <Estudante
+          nome="Wladimir"
+          curso="Design Digital"
+          universidade="UFC Quixadá"
+        />
+      </Disciplina>
+    </div>
+  );
+}
+
+/*function App() {
   return (
     <div className="App">
       <Grupo titulo='Vingadores'>
@@ -21,7 +41,7 @@ function App() {
       </Grupo>
     </div>
   );
-}
+}*/
 
 /*function App() {
   return (
