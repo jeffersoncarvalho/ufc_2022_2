@@ -7,11 +7,23 @@ const Contador = () => {
     const [aragao, setAragao] = useState(false)
     //let contador = 0 //forma errada de usar estados
 
+    /*setInterval(
+        () => {
+            setAragao(!aragao)
+        }
+        ,
+        3000
+    );*/
+
     const acaoAumentar = () => {
         //contador = contador + 1 //forma errada de usar estados
         //console.log(contador) //forma errada de usar estados
         setContador(contador + 1)
 
+    }
+
+    const acaoAragao = () => {
+        setAragao(!aragao)
     }
 
     const mostrarAragao = () => {
@@ -39,9 +51,10 @@ const Contador = () => {
                 title='AUMENTAR'
                 onPress={acaoAumentar}
             />
-            <View style={{marginTop:20}}>
+            <View style={{ marginTop: 20 }}>
                 <Button
                     title='MOSTRAR ARAGAO'
+                    onPress={acaoAragao}
                 />
             </View>
             {

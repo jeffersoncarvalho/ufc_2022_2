@@ -4,12 +4,13 @@ import { StyleSheet, Text, View } from 'react-native';
 //import Professor from './components/Professor';
 //import Cena from './components/strangerthings/Cena';
 //import Personagem from './components/strangerthings/Personagem';
-import Contador from './components/estados/Contador';
+//import Contador from './components/estados/Contador';
+import VotaCidade from './components/estados/VotaCidade';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Contador />
+      <VotaCidade />
     </View>
   );
 }
