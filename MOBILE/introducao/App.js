@@ -2,10 +2,19 @@ import { StyleSheet, Text, View } from 'react-native';
 //import OlaMundo from './components/OlaMundo'
 //import Estudante from './components/Estudante'
 //import Professor from './components/Professor';
-import Cena from './components/strangerthings/Cena';
-import Personagem from './components/strangerthings/Personagem';
+//import Cena from './components/strangerthings/Cena';
+//import Personagem from './components/strangerthings/Personagem';
+import Contador from './components/estados/Contador';
 
 export default function App() {
+  return (
+    <View style={styles.container}>
+      <Contador />
+    </View>
+  );
+}
+
+/*export default function App() {
   return (
     <View style={styles.container}>
       <Cena cena='Mundo Invertido'>
@@ -16,7 +25,7 @@ export default function App() {
       </Cena>
     </View>
   );
-}
+}*/
 
 /*export default function App() {
   return (
