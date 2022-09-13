@@ -19,7 +19,7 @@ const Contador = ()=> {
     const renderizarSena = ()=>{
         if(sena){
             return(
-                <img src="https://www.quixada.ufc.br/wp-content/uploads/2015/05/David-Sena-Oliveira-Final1-240x320.png" alt="Italian Trulli"/>
+                <img src="https://www.quixada.ufc.br/wp-content/uploads/2015/05/David-Sena-Oliveira-Final1-240x320.png" alt="Davi Sena"/>
         
             )
         }
