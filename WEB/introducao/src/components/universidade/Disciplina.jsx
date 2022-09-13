@@ -8,7 +8,7 @@ const Disciplina = ({children,titulo})=> {
                 React.Children.map(
                     children,
                     (estudante)=>{
-                        return React.cloneElement(estudante,{disciplina:titulo})
+                        return React.cloneElement(estudante,{disciplina:titulo,nova:'teste'})
                     }
                 )
             }
