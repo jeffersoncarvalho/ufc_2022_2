@@ -5,11 +5,11 @@ const Contador = () => {
 
     const [contador, setContador] = useState(10)
     const [aragao, setAragao] = useState(false)
-    //let contador = 0
+    //let contador = 0 //forma errada de usar estados
 
     const acaoAumentar = () => {
-        //contador = contador + 1
-        //console.log(contador)
+        //contador = contador + 1 //forma errada de usar estados
+        //console.log(contador) //forma errada de usar estados
         setContador(contador + 1)
 
     }
@@ -39,6 +39,11 @@ const Contador = () => {
                 title='AUMENTAR'
                 onPress={acaoAumentar}
             />
+            <View style={{marginTop:20}}>
+                <Button
+                    title='MOSTRAR ARAGAO'
+                />
+            </View>
             {
                 mostrarAragao()
             }
