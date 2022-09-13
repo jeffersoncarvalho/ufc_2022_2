@@ -14,6 +14,8 @@ const Contador = ()=> {
 
     const modificarSena = ()=>{
         //???
+        setSena(!sena)
+        //setSena((estadoAnterior)=>!estadoAnterior)
     }
 
     const renderizarSena = ()=>{
