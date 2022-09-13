@@ -9,12 +9,13 @@ import './App.css';
 //import Grupo from './components/vingadores/Grupo';
 //import Heroi from './components/vingadores/Heroi';
 //import Disciplina from './components/universidade/Disciplina';
-import Pai from './components/paifilho/Pai';
+//import Pai from './components/paifilho/Pai';
+import Contador from './components/estados/Contador';
 
 function App() {
   return (
     <div className="App">
-      <Pai />
+      <Contador />
     </div>
   );
 }
