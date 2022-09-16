@@ -22,4 +22,14 @@
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="java.io.PrintStream"/>
+    <fullyQualifiedTypeName name="java.rmi.RemoteException"/>
+    <fullyQualifiedTypeName name="java.rmi.Remote"/>
+    <fullyQualifiedTypeName name="ufcqx.ServerRMI"/>
+    <fullyQualifiedTypeName name="java.rmi.server.UnicastRemoteObject"/>
+    <fullyQualifiedTypeName name="ufcqx.HelloRMIImpl"/>
+    <fullyQualifiedTypeName name="invocation.Hello"/>
+    <fullyQualifiedTypeName name="invocation.HelloImpl"/>
+    <fullyQualifiedTypeName name="java.rmi.registry.Registry"/>
+    <fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
+    <fullyQualifiedTypeName name="ufcqx.HelloRMI"/>
 </qualifiedTypeNameHistroy>
