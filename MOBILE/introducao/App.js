@@ -6,13 +6,14 @@ import { StyleSheet, Text, View } from 'react-native';
 //import Personagem from './components/strangerthings/Personagem';
 //import Contador from './components/estados/Contador';
 //import VotaCidade from './components/estados/VotaCidade';
-import VariosEstilos from './components/estilos/VariosEstilos';
+//import VariosEstilos from './components/estilos/VariosEstilos';
+//import TamanhoFixo from './components/flex/TamanhoFixo';
+//import TamanhoDinamico from './components/flex/TamanhoDinamico';
+import BotaoPegaTexto from './components/evento/BotaoPegaTexto';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <VariosEstilos />
-    </View>
+      <BotaoPegaTexto />
   );
 }
 
