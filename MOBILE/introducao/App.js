@@ -5,12 +5,13 @@ import { StyleSheet, Text, View } from 'react-native';
 //import Cena from './components/strangerthings/Cena';
 //import Personagem from './components/strangerthings/Personagem';
 //import Contador from './components/estados/Contador';
-import VotaCidade from './components/estados/VotaCidade';
+//import VotaCidade from './components/estados/VotaCidade';
+import VariosEstilos from './components/estilos/VariosEstilos';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <VotaCidade />
+      <VariosEstilos />
     </View>
   );
 }
