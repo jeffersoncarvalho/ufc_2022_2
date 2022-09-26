@@ -31,10 +31,12 @@
     <fullyQualifiedTypeName name="java.rmi.registry.Registry"/>
     <fullyQualifiedTypeName name="java.rmi.registry.LocateRegistry"/>
     <fullyQualifiedTypeName name="ufcqx.HelloRMI"/>
-    <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="ufcqx.udp.UDPServer"/>
+    <fullyQualifiedTypeName name="ufcqx.udp.UDPClient"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="ufcqx.UDPServer"/>
     <fullyQualifiedTypeName name="java.net.DatagramSocket"/>
     <fullyQualifiedTypeName name="java.net.InetAddress"/>
     <fullyQualifiedTypeName name="java.net.DatagramPacket"/>
-    <fullyQualifiedTypeName name="ufcqx.udp.UDPClient"/>
+    <fullyQualifiedTypeName name="ufcqx.UDPClient"/>
 </qualifiedTypeNameHistroy>
