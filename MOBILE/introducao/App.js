@@ -9,11 +9,13 @@ import { StyleSheet, Text, View } from 'react-native';
 //import VariosEstilos from './components/estilos/VariosEstilos';
 //import TamanhoFixo from './components/flex/TamanhoFixo';
 //import TamanhoDinamico from './components/flex/TamanhoDinamico';
-import BotaoPegaTexto from './components/evento/BotaoPegaTexto';
+//import BotaoPegaTexto from './components/evento/BotaoPegaTexto';
+//import MeuScroll from './components/scroll/MeuScroll';
+import MeuFlatList from './components/listas/MeuFlatList';
 
 export default function App() {
   return (
-      <BotaoPegaTexto />
+      <MeuFlatList />
   );
 }
 
