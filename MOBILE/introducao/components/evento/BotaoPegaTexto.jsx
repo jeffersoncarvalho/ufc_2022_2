@@ -3,46 +3,54 @@ import { useState } from 'react'
 
 const BotaoPegaTexto = () => {
 
-    const [texto, setTexto] = useState('')
+    const [nome, setNome] = useState('')
+    const [curso, setCurso] = useState('')
+    const [universidade, setUniversidade] = useState('')
 
     const acaoBotao = () => {
-        alert(texto)
+        alert('Nome: ' + nome + '\nCurso: ' + curso + '\nUniversidade: ' + universidade)
+        setNome('')
+        setCurso('')
+        setUniversidade('')
     }
 
     return (
         <View style={estilos.container}>
 
-            <Text style={estilos.cabecalho}>Entrada de Texto com Botao</Text>
+            <Text style={estilos.cabecalho}>Cadastrar Estudante</Text>
             <TextInput
-                placeholder='Digite um texto'
+                placeholder='Digite o seu nome'
                 style={estilos.input}
+                value={nome}
                 onChangeText={
-                    (entrada) => {
-                        setTexto(entrada)
+                    (nome) => {
+                        setNome(nome)
                     }
                 }
             />
             <TextInput
-                placeholder='Digite um texto'
+                placeholder='Digite o seu curso'
                 style={estilos.input}
+                value={curso}
                 onChangeText={
-                    (entrada) => {
-                        setTexto(entrada)
+                    (curso) => {
+                        setCurso(curso)
                     }
                 }
             />
             <TextInput
-                placeholder='Digite um texto'
+                placeholder='Digite a sua universidade'
                 style={estilos.input}
+                value={universidade}
                 onChangeText={
-                    (entrada) => {
-                        setTexto(entrada)
+                    (universidade) => {
+                        setUniversidade(universidade)
                     }
                 }
             />
             <View style={estilos.botao}>
                 <Button
-                    title='PEGAR TEXTO'
+                    title='CADASTRAR'
                     onPress={acaoBotao}
                 />
             </View>
@@ -56,7 +64,7 @@ const estilos = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#c0c0c0'
+        backgroundColor: '#e5e5e5'
     },
     cabecalho: {
         fontSize: 20,
@@ -68,7 +76,8 @@ const estilos = StyleSheet.create({
         width: "95%",
         borderColor: "gray",
         borderWidth: 2,
-        paddingLeft: 20
+        paddingLeft: 20,
+        marginTop: 10
     },
     botao: {
         width: "93%",
