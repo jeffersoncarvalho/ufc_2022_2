@@ -1,45 +1,35 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-import Home from './components/Home';
-import CreateStudent from './components/students/CreateStudent';
-import EditStudent from './components/students/EditStudent';
-import ListStudent from './components/students/ListStudent';
+import CRUDRoutes from './components/routes/CRUDRoutes';
 
 function App() {
   return (
     <div className='container'>
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <Link to='/' className='navbar-brand' style={{ paddingLeft: 10 }}>CRUD</Link>
-        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav mr-auto'>
-            <li className='nav-item'>
-              <Link to='/' className='nav-link'>Home</Link>
-            </li>
+        <ul className='navbar-nav mr-auto'>
+          
+          <li className='nav-item'>
+            <Link to='/' className='nav-link'>Home</Link>
+          </li>
 
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Estudante
-              </a>
-              <ul className="dropdown-menu">
-                <li className='nav-item'>
-                  <Link to='/createStudent' className='nav-link'>Criar Estudante</Link>
-                </li>
-                <li className='nav-item'>
-                  <Link to='/listStudent' className='nav-link'>Listar Estudante</Link>
-                </li>
-              </ul>
-            </li>
+          <li className='nav-item dropdown'>
+            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Estudante
+            </a>
+            <ul class="dropdown-menu dropdown-menu-light">
+              <li>
+                <Link className="dropdown-item" to='/createStudent'>Criar Estudante</Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to='/listStudent'>Listar Estudante</Link>
+              </li>
+            </ul>
+          </li>
 
-          </ul>
-        </div>
+        </ul>
       </nav>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='createStudent' element={<CreateStudent />} />
-        <Route path='listStudent' element={<ListStudent />} />
-        <Route path='editStudent' element={<EditStudent />} />
-      </Routes>
+      {<CRUDRoutes />}
     </div>
   );
 }

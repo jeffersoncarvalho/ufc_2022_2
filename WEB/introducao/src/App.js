@@ -10,13 +10,13 @@ import './App.css';
 //import Heroi from './components/vingadores/Heroi';
 //import Disciplina from './components/universidade/Disciplina';
 //import Pai from './components/paifilho/Pai';
-//import Contador from './components/estados/Contador';
-import VotaCidades from './components/estados/VotaCidades';
+import Contador from './components/estados/Contador';
+//import VotaCidades from './components/estados/VotaCidades';
 
 function App() {
   return (
     <div className="App">
-      <VotaCidades />
+      <Contador />
     </div>
   );
 }

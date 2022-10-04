@@ -1,10 +1,19 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Contador = ()=> {
     
     const [contador,setContador] = useState(100)
     const [sena,setSena] = useState(false)
+    const [par,setPar] = useState(false)
     //let contador = 0
+
+    useEffect(
+        ()=>{
+            if(contador%2===0) setPar(true)
+            else setPar(false)
+        },
+        [contador]
+    )
 
     const contar = ()=> {
         //contador = contador + 1
@@ -28,10 +37,16 @@ const Contador = ()=> {
         return null
     }
 
+    const generatePARIMPAR = ()=> {
+        if(par) return (<h1>PAR</h1>)
+        return (<h1>ÍMPAR</h1>)
+    }
+
     return(
         <div
         >
             <h2>Contador {contador}</h2>
+            {generatePARIMPAR()}
             <button onClick={contar}>Acrescentar</button>
             <button onClick={modificarSena}>Sena</button>
             {

@@ -11,11 +11,13 @@ import { StyleSheet, Text, View } from 'react-native';
 //import TamanhoDinamico from './components/flex/TamanhoDinamico';
 //import BotaoPegaTexto from './components/evento/BotaoPegaTexto';
 //import MeuScroll from './components/scroll/MeuScroll';
-import MeuFlatList from './components/listas/MeuFlatList';
+//import MeuFlatList from './components/listas/MeuFlatList';
+//import PokemonProf from './components/pokemonprof/PokemonProf';
+import MyPokemon from './components/pokemon/MyPokemon';
 
 export default function App() {
   return (
-      <MeuFlatList />
+      <MyPokemon />
   );
 }
 
