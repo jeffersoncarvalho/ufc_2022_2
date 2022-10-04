@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 const MyPokemon = ()=> {
 
-    const [id,setId] = useState(25)
+    const [id,setId] = useState(2)
     const [name,setName] = useState('')
     const [frontImage,setFrontImage] = useState('')
     const [backImage,setBackImage] = useState('')
@@ -29,23 +29,26 @@ const MyPokemon = ()=> {
 
         }
         ,
-        []
+        [id]
     )
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Pokédex</Text>
             <Text style={{fontSize:20}}>{name.toUpperCase()}</Text>
+            <Text>{id}</Text>
             <View style={styles.images}>
                 <Image source={{uri:frontImage,width:150,height:150}} />
                 <Image source={{uri:backImage,width:150,height:150}} />
             </View>
             <View style={styles.buttons}>
                 <View style={styles.button}>
-                    <Button title="Voltar" />
+                    <Button title="Voltar" onPress={()=>setId(
+                        (id-1===0)? 1 : id-1
+                    )}/>
                 </View>
                 <View style={styles.button}>
-                    <Button title="Avançar" />
+                    <Button title="Avançar" onPress={()=>setId(id+1)}/>
                 </View>
             </View>
         </View>
