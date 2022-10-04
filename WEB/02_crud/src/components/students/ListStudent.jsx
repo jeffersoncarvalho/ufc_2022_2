@@ -1,9 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { studentsList } from './data.js'
+import axios from 'axios'
 
 const ListStudent = () => {
 
     const [students, setStudents] = useState(studentsList)
+
+    useEffect(
+        ()=>{
+            //console.log('Teste')
+            axios.get('http://localhost:3001/students')
+            .then(
+                (response)=>{
+                    //console.log(response.data)
+                    setStudents(response.data)
+                }
+            )
+            .catch(
+                (error)=>{
+                    console.log(error)
+                }
+            )
+        }
+        ,
+        []
+    )
 
     const generateTableBody = ()=> {
         /*return (

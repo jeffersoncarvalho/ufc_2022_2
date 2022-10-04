@@ -1,0 +1,8 @@
+{
+    "students":[
+        {"id":1,"name":"Jefferson","course":"SI","ira":7.6},
+        {"id":2,"name":"Wladimir","course":"CC","ira":10},
+        {"id":3,"name":"João","course":"CC","ira":8.5},
+        {"id":4,"name":"Jeandro","course":"RC","ira":7.8}
+    ]
+}
