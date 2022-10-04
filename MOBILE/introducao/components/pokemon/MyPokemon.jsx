@@ -7,6 +7,7 @@ const MyPokemon = ()=> {
     const [name,setName] = useState('')
     const [frontImage,setFrontImage] = useState('')
     const [backImage,setBackImage] = useState('')
+    const [abilities,setAbilities] = useState([])
 
     useEffect(
         ()=>{
@@ -23,6 +24,8 @@ const MyPokemon = ()=> {
                 setName(responseJson.name)
                 setFrontImage(responseJson.sprites.front_default)
                 setBackImage(responseJson.sprites.back_default)
+                setAbilities(responseJson.abilities)
+                
             }
            )
            .catch((error)=>{console.log(error)})
@@ -37,6 +40,7 @@ const MyPokemon = ()=> {
             <Text style={styles.title}>Pokédex</Text>
             <Text style={{fontSize:20}}>{name.toUpperCase()}</Text>
             <Text>{id}</Text>
+            <Text>{abilities[0]?.ability.name.toUpperCase()}</Text>
             <View style={styles.images}>
                 <Image source={{uri:frontImage,width:150,height:150}} />
                 <Image source={{uri:backImage,width:150,height:150}} />
