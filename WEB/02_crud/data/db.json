@@ -1,8 +1,46 @@
 {
-    "students":[
-        {"id":1,"name":"Jefferson","course":"SI","ira":7.6},
-        {"id":2,"name":"Wladimir","course":"CC","ira":10},
-        {"id":3,"name":"João","course":"CC","ira":8.5},
-        {"id":4,"name":"Jeandro","course":"RC","ira":7.8}
-    ]
+  "students": [
+    {
+      "id": 1,
+      "name": "Jefferson",
+      "course": "SI",
+      "ira": 7.6
+    },
+    {
+      "id": 2,
+      "name": "Wladimir",
+      "course": "CC",
+      "ira": 10
+    },
+    {
+      "id": 3,
+      "name": "João",
+      "course": "CC",
+      "ira": 8.5
+    },
+    {
+      "id": 4,
+      "name": "Jeandro",
+      "course": "RC",
+      "ira": 7.8
+    },
+    {
+      "name": "Paulo",
+      "course": "EC",
+      "ira": "10",
+      "id": 5
+    },
+    {
+      "name": "Cristiano",
+      "course": "EC",
+      "ira": "5.6",
+      "id": 6
+    },
+    {
+      "name": "Teste",
+      "course": "TT",
+      "ira": "7",
+      "id": 7
+    }
+  ]
 }

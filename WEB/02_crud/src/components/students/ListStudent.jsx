@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import { studentsList } from './data.js'
+//import { studentsList } from './data.js'
 import axios from 'axios'
 
 const ListStudent = () => {
 
-    const [students, setStudents] = useState(studentsList)
+    const [students, setStudents] = useState([])
 
     useEffect(
         ()=>{
@@ -33,7 +33,8 @@ const ListStudent = () => {
             </div>
         )*/
         return students.map(
-            (element)=>{
+            (element,index)=>{
+                element.key = index
                 return (
                     <tr>
                         <td>{element.name}</td>

@@ -1,16 +1,28 @@
 import { useState } from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const CreateStudent = () => {
 
     const [name, setName] = useState('')
     const [course, setCourse] = useState('')
     const [ira, setIra] = useState(0.0)
+    const navigate = useNavigate()
 
     const handleSubmit = (event)=> {
-        //event.preventDefault()
-        console.log(name)
+        event.preventDefault()
+        /*console.log(name)
         console.log(course)
-        console.log(ira)
+        console.log(ira)*/
+        const newStudent = {name,course,ira}
+        axios.post('http://localhost:3001/students',newStudent)
+        .then(
+            (response)=>{
+                console.log(response.data.id)
+                navigate('/listStudent')
+            }
+        )
+        .catch(error=>console.log(error))
 
     }
 
