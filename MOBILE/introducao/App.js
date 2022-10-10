@@ -13,11 +13,12 @@ import { StyleSheet, Text, View } from 'react-native';
 //import MeuScroll from './components/scroll/MeuScroll';
 //import MeuFlatList from './components/listas/MeuFlatList';
 //import PokemonProf from './components/pokemonprof/PokemonProf';
-import MyPokemon from './components/pokemon/MyPokemon';
+//import MyPokemon from './components/pokemon/MyPokemon';
+import MyUseEffect from './components/revisao/MyUseEffect';
 
 export default function App() {
   return (
-      <MyPokemon />
+      <MyUseEffect />
   );
 }
 
