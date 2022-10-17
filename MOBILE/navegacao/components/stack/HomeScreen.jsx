@@ -9,7 +9,11 @@ const HomeScreen = (props)=> {
             <View>
                 <Button
                     title='Detalhes'
-                    onPress={()=>props.navigation.navigate('DetailsScreen')} />
+                    onPress={()=>props.navigation.navigate(
+                        'DetailsScreen',
+                        {nome:'Jefferson de Carvalho',profissao:'Professor'}
+                    )
+                    } />
             </View>
         </View>
     )
