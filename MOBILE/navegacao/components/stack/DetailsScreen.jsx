@@ -17,6 +17,11 @@ const DetailsScreen = (props)=> {
                     title='Home'
                     onPress={()=>props.navigation.navigate('HomeScreen')} />
             </View>
+            <View>
+                <Button
+                    title='Abrir Modal'
+                    onPress={()=>props.navigation.navigate('MyModalScreen')} />
+            </View>
         </View>
     )
 }
