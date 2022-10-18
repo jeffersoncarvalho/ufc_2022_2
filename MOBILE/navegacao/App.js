@@ -3,12 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 //import Routes from './components/stack/Routes';
 //import RoutesTab from './components/bottomtab/RoutesTab';
-import RoutesDrawer from './components/drawer/RoutesDrawer';
+//import RoutesDrawer from './components/drawer/RoutesDrawer';
+import RoutesAtivididade03 from './components/atividade03/components/RoutesAtividade03';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <RoutesDrawer />
+      <RoutesAtivididade03 />
     </NavigationContainer>
   );
 }
