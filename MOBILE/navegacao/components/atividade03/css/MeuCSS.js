@@ -7,6 +7,16 @@ const estilos = StyleSheet.create({
         justifyContent:'flex-start',
         alignItems:'center',
         marginTop:25
+    },
+    cabecalho: {
+        fontSize:25,
+        fontWeight:'bold',
+        margin:15
+    },
+    botao: {
+        width:'60%',
+        margin:10,
+        backgroundColor:'lightblue'
     }
 })
 
