@@ -1,8 +1,9 @@
 import { View, Text, Button } from "react-native";
+import { estilos } from "../css/MeuCSS";
 
 const Home = (props)=> {
     return (
-        <View>
+        <View style={estilos.container}>
             <Text>Home</Text>
             <View>
                 <Button
