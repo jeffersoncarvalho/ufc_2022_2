@@ -1,12 +1,6 @@
 {
   "students": [
     {
-      "id": 1,
-      "name": "Jefferson",
-      "course": "SI",
-      "ira": 7.6
-    },
-    {
       "id": 2,
       "name": "Wladimir",
       "course": "CC",
@@ -17,12 +11,6 @@
       "name": "João",
       "course": "CC",
       "ira": 8.5
-    },
-    {
-      "name": "Jeandro Bezerra",
-      "course": "Redes de Computadores",
-      "ira": "6.1",
-      "id": 4
     },
     {
       "name": "Paulo",

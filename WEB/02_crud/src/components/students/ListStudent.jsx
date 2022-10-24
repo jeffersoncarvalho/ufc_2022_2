@@ -30,7 +30,12 @@ const ListStudent = () => {
     function deleteStudent(id) {
         if(window.confirm('Deseja excluir?')){
             axios.delete('http://localhost:3001/students/'+id)
-            .then(()=>console.log('ok'))
+            .then(
+                ()=>{
+                    let result = students.filter((student)=>student.id !== id) 
+                    setStudents(result)   
+                }
+            )
             .catch(error=>console.log(error))  
         }
     }
