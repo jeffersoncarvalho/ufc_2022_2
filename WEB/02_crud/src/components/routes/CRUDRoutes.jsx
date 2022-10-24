@@ -13,7 +13,7 @@ const CRUDRoutes = () => {
             
             <Route path='createStudent' element={<CreateStudent />} />
             <Route path='listStudent' element={<ListStudent />} />
-            <Route path='editStudent' element={<EditStudent />} />
+            <Route path='editStudent/:id' element={<EditStudent />} />
         </Routes>
     )
 }
