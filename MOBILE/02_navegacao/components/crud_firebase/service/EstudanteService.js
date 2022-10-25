@@ -6,15 +6,15 @@ class EstudanteService {
         getDocs(collection(firestoreDb,'estudante'))
         .then(
             (snapshot)=>{
+                const estudantes = []
                 snapshot.forEach(
                     (document)=>{
-                        //console.log(document.id)
+                        const id = document.id
                         const {nome,curso,ira} = document.data()
-                        console.log(nome)
-                        console.log(curso)
-                        console.log(ira)
+                        estudantes.push({id,nome,curso,ira})
                     }//document
                 )//snapshot.forEach
+                callback(estudantes)
             }//snapshot
         )//then
         .catch(error=>console.log(error))
