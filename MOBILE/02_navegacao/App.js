@@ -4,12 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 //import Routes from './components/stack/Routes';
 //import RoutesTab from './components/bottomtab/RoutesTab';
 //import RoutesDrawer from './components/drawer/RoutesDrawer';
-import RoutesAtivididade03 from './components/atividade03/components/RoutesAtividade03';
+//import RoutesAtivididade03 from './components/atividade03/components/RoutesAtividade03';
+import RoutesCrud from './components/crud_firebase/RoutesCrud';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <RoutesAtivididade03 />
+      <RoutesCrud />
     </NavigationContainer>
   );
 }
