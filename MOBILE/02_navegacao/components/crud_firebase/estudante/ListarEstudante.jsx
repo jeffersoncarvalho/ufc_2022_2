@@ -1,5 +1,6 @@
-import { View, Text, SafeAreaView, FlatList } from "react-native"
+import { View, Text, SafeAreaView, FlatList, Button } from "react-native"
 import { useEffect, useState } from "react"
+import { estilos } from "../css/MeuCSS"
 
 import EstudanteService from "../service/EstudanteService"
 import { firestoreDb } from "../firebase/firebase_config"
@@ -23,8 +24,8 @@ const ListarEstudante = () => {
     )
 
     return (
-        <View>
-            <Text>Listar Estudantes</Text>
+        <View style={estilos.container}>
+            <Text style={estilos.cabecalho}>Listar Estudantes</Text>
             {console.log(estudantes)}
             <SafeAreaView>
                 <FlatList 
@@ -32,10 +33,22 @@ const ListarEstudante = () => {
                     renderItem={
                         ({item})=>{
                             return (
-                                <View>
-                                    <Text>{item.nome}</Text>
-                                    <Text>{item.curso}</Text>
-                                    <Text>{item.ira}</Text>
+                                <View
+                                    style={{
+                        
+                                        flexDirection:'row',
+                                        justifyContent:'center'
+                                    }}
+                                >
+                                    <Text style={{width:'20%',fontWeight:'bold'}}>{item.nome}</Text>
+                                    <Text style={{width:'25%'}}>{item.curso}</Text>
+                                    <Text style={{margin:5}}>{item.ira}</Text>
+                                    <View style={{margin:5}}>
+                                        <Button title="Editar" />
+                                    </View>
+                                    <View style={{margin:5}}>
+                                        <Button title="Apagar" />
+                                    </View>
                                 </View>
                             )
                         }
