@@ -34,8 +34,8 @@ const ListarEstudante = () => {
                             <View style={{
                                 flexDirection:'row'
                             }}>
-                                <Text style={{margin:5,fontWeight:'bold'}}>{item.nome}</Text>
-                                <Text style={{margin:5}}>{item.curso}</Text>
+                                <Text style={{margin:5,fontWeight:'bold',width:'20%'}}>{item.nome}</Text>
+                                <Text style={{margin:5, width:'20%'}}>{item.curso}</Text>
                                 <Text style={{margin:5}}>{item.ira}</Text>
                                 <View style={{margin:5}}>
                                     <Button title="Editar" />

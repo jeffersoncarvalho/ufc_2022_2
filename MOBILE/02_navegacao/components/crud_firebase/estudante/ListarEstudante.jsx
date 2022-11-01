@@ -13,7 +13,7 @@ const ListarEstudante = () => {
             EstudanteService.listar(
                 firestoreDb,
                 (estudantes) => {
-                    console.log(estudantes)
+                    //console.log(estudantes)
                     setEstudantes(estudantes)
                 }
             )
@@ -30,17 +30,17 @@ const ListarEstudante = () => {
                 <FlatList 
                     data={estudantes}
                     renderItem={
-                        ({estudante})=>{
+                        ({item})=>{
                             return (
                                 <View>
-                                    <Text>{estudante.nome}</Text>
-                                    <Text>{estudante.curso}</Text>
-                                    <Text>{estudante.ira}</Text>
+                                    <Text>{item.nome}</Text>
+                                    <Text>{item.curso}</Text>
+                                    <Text>{item.ira}</Text>
                                 </View>
                             )
                         }
                     }
-                    keyExtractor={estudante => estudante.id}
+                    keyExtractor={item => item.id}
                 />
             </SafeAreaView>
         </View>

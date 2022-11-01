@@ -10,7 +10,9 @@ class EstudanteService {
                 snapshot.forEach(
                     (document)=>{
                         const id = document.id
+                        //console.log(document.data().nome)
                         const {nome,curso,ira} = document.data()
+                        //console.log(ira)
                         estudantes.push({id,nome,curso,ira})
                     }//document
                 )//snapshot.forEach
