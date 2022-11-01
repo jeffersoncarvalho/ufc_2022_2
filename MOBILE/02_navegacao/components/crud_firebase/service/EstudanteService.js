@@ -1,4 +1,4 @@
-import { getDocs,collection,addDoc } from "firebase/firestore/lite";
+import { getDocs,collection,addDoc,doc,getDoc } from "firebase/firestore/lite";
 
 class EstudanteService {
 
@@ -27,6 +27,18 @@ class EstudanteService {
         .then(
             (docRef)=>{
                 callback(docRef.id)
+            }
+        )
+        .catch(error=>console.log(error))
+    }
+
+    static recuperar = (firestoreDb,callback,id)=>{
+        getDoc(doc(firestoreDb,'estudante',id))
+        .then(
+            (docSnap)=>{
+                if(docSnap.exists()){
+                    callback(docSnap.data())
+                }
             }
         )
         .catch(error=>console.log(error))
