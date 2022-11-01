@@ -5,7 +5,7 @@ import { estilos } from "../css/MeuCSS"
 import EstudanteService from "../service/EstudanteService"
 import { firestoreDb } from "../firebase/firebase_config"
 
-const ListarEstudante = () => {
+const ListarEstudante = (props) => {
 
     const [estudantes,setEstudantes] = useState([])
 
@@ -44,7 +44,10 @@ const ListarEstudante = () => {
                                     <Text style={{width:'25%'}}>{item.curso}</Text>
                                     <Text style={{margin:5}}>{item.ira}</Text>
                                     <View style={{margin:5}}>
-                                        <Button title="Editar" />
+                                        <Button 
+                                            title="Editar" 
+                                            onPress={()=>props.navigation.navigate('EditarEstudante',{id:item.id})}
+                                            />
                                     </View>
                                     <View style={{margin:5}}>
                                         <Button title="Apagar" />
