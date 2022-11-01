@@ -1,4 +1,4 @@
-import { getDocs,collection,addDoc,doc,getDoc } from "firebase/firestore/lite";
+import { getDocs,collection,addDoc,doc,getDoc,updateDoc } from "firebase/firestore/lite";
 
 class EstudanteService {
 
@@ -39,6 +39,16 @@ class EstudanteService {
                 if(docSnap.exists()){
                     callback(docSnap.data())
                 }
+            }
+        )
+        .catch(error=>console.log(error))
+    }
+
+    static atualizar = (firestoreDb,callback,id,estudante)=>{
+        updateDoc( doc(firestoreDb,'estudante',id) , estudante)
+        .then(
+            ()=>{
+                callback()
             }
         )
         .catch(error=>console.log(error))

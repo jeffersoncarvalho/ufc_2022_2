@@ -2,7 +2,18 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
 
-const EditStudent = ()=> {
+import FirebaseContext from '../../utils/FirebaseContext'
+import StudentService from '../../services/StudentService'
+
+const EditStudentPage = () => {
+    return (
+        <FirebaseContext.Consumer>
+            {value => <EditStudent firebase={value} />}
+        </FirebaseContext.Consumer>
+    )
+}
+
+const EditStudent = (props)=> {
 
     const [name, setName] = useState('')
     const [course, setCourse] = useState('')
@@ -13,8 +24,17 @@ const EditStudent = ()=> {
 
     useEffect(
         ()=>{
+            StudentService.retrieve(
+                props.firebase.getFirestoreDb(),
+                (student)=>{
+                    setName(student.name)
+                    setCourse(student.course)
+                    setIra(student.ira)
+                },
+                params.id
+            )
             //console.log(params.id)
-            axios.get('http://localhost:3001/students/'+params.id)
+            /*axios.get('http://localhost:3001/students/'+params.id)
             .then(
                 (response)=>{
                     //console.log(response.data.name)
@@ -23,7 +43,7 @@ const EditStudent = ()=> {
                     setIra(response.data.ira)
                 }
             )
-            .catch((error)=>console.log(error))
+            .catch((error)=>console.log(error))*/
         }
         ,
         []
@@ -100,4 +120,4 @@ const EditStudent = ()=> {
     )
 }
 
-export default EditStudent
+export default EditStudentPage

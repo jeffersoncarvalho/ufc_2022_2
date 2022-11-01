@@ -14,7 +14,17 @@ const EditarEstudante = (props)=> {
 
     useEffect(
         ()=>{
-            console.log(props.route.params.id)
+            //console.log(props.route.params.id)
+            EstudanteService.recuperar(
+                firestoreDb,
+                (estudante)=>{
+                    //console.log(estudante)
+                    setNome(estudante.nome)
+                    setCurso(estudante.curso)
+                    setIra(estudante.ira)
+                },
+                props.route.params.id
+            )
         },
         []
     )
@@ -23,6 +33,15 @@ const EditarEstudante = (props)=> {
         //console.log(nome)
         //console.log(curso)
         //console.log(ira)
+        EstudanteService.atualizar(
+            firestoreDb,
+            ()=>{
+                alert('Estudante atualizado!')
+                props.navigation.navigate('ListarEstudante')
+            },
+            props.route.params.id,
+            {nome,curso,ira}
+        )
     }
 
     return (

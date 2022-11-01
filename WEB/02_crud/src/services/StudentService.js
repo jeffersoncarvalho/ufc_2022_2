@@ -1,4 +1,4 @@
-import { collection, getDocs} from 'firebase/firestore'
+import { collection, getDocs, addDoc, doc, getDoc} from 'firebase/firestore'
 
 class StudentService {
 
@@ -19,6 +19,29 @@ class StudentService {
                 callback(students)
             }//studentSnapshot
         )//then
+        .catch(error=>console.log(error))
+    }
+
+    static add = (firestoreDb,callback,student)=>{
+        addDoc(collection(firestoreDb,'student'),student)
+        .then(
+            (docRef)=>{
+                callback(docRef.id)
+            }
+        )
+        .catch(error=>console.log(error))
+    }
+
+    static retrieve = (firestoreDb,callback,id)=>{
+        getDoc(doc(firestoreDb,'student',id))
+        .then(
+            (docSnap)=>{
+                if(docSnap.exists()){
+                    //console.log("Document data:", docSnap.data())
+                    callback(docSnap.data())
+                }
+            }
+        )
         .catch(error=>console.log(error))
     }
 
