@@ -1,4 +1,4 @@
-import { getDocs,collection } from "firebase/firestore/lite";
+import { getDocs,collection,addDoc } from "firebase/firestore/lite";
 
 class EstudanteService {
 
@@ -19,6 +19,16 @@ class EstudanteService {
                 callback(estudantes)
             }//snapshot
         )//then
+        .catch(error=>console.log(error))
+    }
+
+    static criar = (firestoreDb,callback,estudante)=>{
+        addDoc(collection(firestoreDb,'estudante'),estudante)
+        .then(
+            (docRef)=>{
+                callback(docRef.id)
+            }
+        )
         .catch(error=>console.log(error))
     }
 
