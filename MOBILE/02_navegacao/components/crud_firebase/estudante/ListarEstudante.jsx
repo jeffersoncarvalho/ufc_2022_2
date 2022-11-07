@@ -8,6 +8,7 @@ import { firestoreDb } from "../firebase/firebase_config"
 const ListarEstudante = (props) => {
 
     const [estudantes,setEstudantes] = useState([])
+    const [flag,setFlag] = useState(false)
 
     useEffect(
         () => {
@@ -23,10 +24,32 @@ const ListarEstudante = (props) => {
         []
     )
 
+    const apagarEstudanteV2 = (id)=>{
+        EstudanteService.apagar(
+            firestoreDb,
+            (resultado)=>{
+               let estudantesTemp = estudantes
+               for(let i=0;i<estudantesTemp.length;i++){
+                if(estudantesTemp[i].id === id){
+                    estudantesTemp.splice(i,1)
+                    break;
+                }
+               }
+               setEstudantes(estudantesTemp)
+               setFlag(!flag)
+            },
+            id)
+    }
+
     const apagarEstudante = (id)=>{
         EstudanteService.apagar(
             firestoreDb,
-            (resultado)=>{},
+            (resultado)=>{
+                let estudantesResultado = estudantes.filter(
+                    (estudante)=>estudante.id !== id
+                )
+                setEstudantes(estudantesResultado)
+            },
             id)
     }
 
@@ -59,7 +82,7 @@ const ListarEstudante = (props) => {
                                     <View style={{margin:5}}>
                                         <Button 
                                             title="Apagar"
-                                            onPress={()=>apagarEstudante(item.id)} 
+                                            onPress={()=>apagarEstudanteV2(item.id)} 
                                             />
                                     </View>
                                 </View>
