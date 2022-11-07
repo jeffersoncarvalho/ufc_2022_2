@@ -1,5 +1,5 @@
-import { getDocs,collection,addDoc,doc,getDoc,updateDoc,deleteDoc } from "firebase/firestore/lite";
-
+import { getDocs,collection,addDoc,doc,getDoc,updateDoc,deleteDoc,query } from "firebase/firestore/lite";
+import { onSnapshot } from 'firebase/firestore'
 class EstudanteService {
 
     static listar = (firestoreDb,callback)=>{
@@ -20,6 +20,24 @@ class EstudanteService {
             }//snapshot
         )//then
         .catch(error=>console.log(error))
+    }
+
+    static listar_onSnaphot = (firestoreDb,callback)=>{
+        const q = query(collection(firestoreDb,'estudante'))
+        onSnapshot(
+            q,
+            (querySnaphot)=>{
+                const estudantes = []
+                querySnaphot.forEach(
+                    (document)=>{
+                        const id = document.id
+                        const {nome,curso,ira} = document.data()
+                        estudantes.push({id,nome,curso,ira})
+                    }//document
+                )//snapshot.forEach
+                callback(estudantes)
+            }
+        )
     }
 
     static criar = (firestoreDb,callback,estudante)=>{
