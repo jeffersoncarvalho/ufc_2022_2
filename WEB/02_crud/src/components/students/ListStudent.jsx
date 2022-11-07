@@ -17,6 +17,7 @@ const ListStudentPage = () => {
 const ListStudent = (props) => {
 
     const [students, setStudents] = useState([])
+    const [reload, setReload] = useState(false)
 
     useEffect(
         () => {
@@ -33,18 +34,40 @@ const ListStudent = (props) => {
         []
     )
 
-    function deleteStudent(id) {
+    function deleteStudentV2(id) {
         if (window.confirm('Deseja excluir?')) {
-            axios.delete('http://localhost:3001/students/' + id)
-                .then(
-                    () => {
-                        let result = students.filter((student) => student.id !== id)
-                        setStudents(result)
-                    }
-                )
-                .catch(error => console.log(error))
+            StudentService.delete(
+                props.firebase.getFirestoreDb(),
+                ()=>{
+                   let studentsTemp = students
+                   for(let i=0;i<studentsTemp.length;i++){
+                        if(studentsTemp[i].id===id){
+                            studentsTemp.splice(i,1)
+                            break
+                        }
+                   }
+                   setStudents(studentsTemp)
+                   setReload(!reload)
+                },
+                id
+            )//delete
         }
     }
+
+    function deleteStudent(id) {
+        if (window.confirm('Deseja excluir?')) {
+            StudentService.delete(
+                props.firebase.getFirestoreDb(),
+                ()=>{
+                    let studentsResult = students.filter(
+                        (student)=>student.id !== id
+                    )
+                    setStudents(studentsResult)
+                },
+                id
+            )//delete
+        }//if
+    }//function
 
     const generateTableBody = () => {
         /*return (
@@ -67,7 +90,7 @@ const ListStudent = (props) => {
                             </Link>
                         </td>
                         <td>
-                            <button className='btn btn-danger' onClick={() => deleteStudent(element.id)}>
+                            <button className='btn btn-danger' onClick={() => deleteStudentV2(element.id)}>
                                 Apagar
                             </button>
                         </td>

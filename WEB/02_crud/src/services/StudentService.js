@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, doc, getDoc, updateDoc} from 'firebase/firestore'
+import { collection, getDocs, addDoc, doc, getDoc, updateDoc, deleteDoc} from 'firebase/firestore'
 
 class StudentService {
 
@@ -54,6 +54,12 @@ class StudentService {
                 callback(true)
             }
         )
+        .catch(error=>console.log(error))
+    }
+
+    static delete = (firestoreDb,callback,id)=>{
+        deleteDoc(doc(firestoreDb,'student',id))
+        .then(()=>callback(true))
         .catch(error=>console.log(error))
     }
 
