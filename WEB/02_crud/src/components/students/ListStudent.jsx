@@ -21,7 +21,7 @@ const ListStudent = (props) => {
 
     useEffect(
         () => {
-            StudentService.list(
+            StudentService.list_on_snapshot(
                 props.firebase.getFirestoreDb(),
                 (students) => {
                     //console.log(students)
