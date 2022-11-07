@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, doc, getDoc} from 'firebase/firestore'
+import { collection, getDocs, addDoc, doc, getDoc, updateDoc} from 'firebase/firestore'
 
 class StudentService {
 
@@ -40,6 +40,18 @@ class StudentService {
                     //console.log("Document data:", docSnap.data())
                     callback(docSnap.data())
                 }
+            }
+        )
+        .catch(error=>console.log(error))
+    }
+
+    static update = (firestoreDb,callback,id,student)=>{
+        updateDoc(
+            doc(firestoreDb,'student',id),
+            student)
+        .then(
+            ()=>{
+                callback(true)
             }
         )
         .catch(error=>console.log(error))

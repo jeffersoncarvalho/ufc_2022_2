@@ -1,4 +1,4 @@
-import { getDocs,collection,addDoc,doc,getDoc,updateDoc } from "firebase/firestore/lite";
+import { getDocs,collection,addDoc,doc,getDoc,updateDoc,deleteDoc } from "firebase/firestore/lite";
 
 class EstudanteService {
 
@@ -51,6 +51,12 @@ class EstudanteService {
                 callback()
             }
         )
+        .catch(error=>console.log(error))
+    }
+
+    static apagar = (firestoreDb,callback,id)=>{
+        deleteDoc(doc(firestoreDb,'estudante',id))
+        .then(()=>callback(true))
         .catch(error=>console.log(error))
     }
 

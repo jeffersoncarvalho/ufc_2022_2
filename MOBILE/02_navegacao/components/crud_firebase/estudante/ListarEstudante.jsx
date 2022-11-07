@@ -23,6 +23,13 @@ const ListarEstudante = (props) => {
         []
     )
 
+    const apagarEstudante = (id)=>{
+        EstudanteService.apagar(
+            firestoreDb,
+            (resultado)=>{},
+            id)
+    }
+
     return (
         <View style={estilos.container}>
             <Text style={estilos.cabecalho}>Listar Estudantes</Text>
@@ -50,7 +57,10 @@ const ListarEstudante = (props) => {
                                             />
                                     </View>
                                     <View style={{margin:5}}>
-                                        <Button title="Apagar" />
+                                        <Button 
+                                            title="Apagar"
+                                            onPress={()=>apagarEstudante(item.id)} 
+                                            />
                                     </View>
                                 </View>
                             )

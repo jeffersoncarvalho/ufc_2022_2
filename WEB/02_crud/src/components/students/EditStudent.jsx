@@ -52,13 +52,21 @@ const EditStudent = (props)=> {
     const handleSubmit = (event)=> {
         event.preventDefault()
         const studentUpdated = {name,course,ira}
-        axios.put('http://localhost:3001/students/'+params.id,studentUpdated)
+        StudentService.update(
+            props.firebase.getFirestoreDb(),
+            (result)=>{
+                navigate('/listStudent')
+            },
+            params.id,
+            studentUpdated
+        )
+        /*axios.put('http://localhost:3001/students/'+params.id,studentUpdated)
         .then(
             (response)=>{
                 navigate('/listStudent')
             }
         )
-        .catch((error=>console.log(error)))
+        .catch((error=>console.log(error)))*/
     }
 
     return (
