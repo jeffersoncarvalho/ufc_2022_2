@@ -5,7 +5,7 @@ import { useState } from "react"
 import { auth } from "../firebase/firebase_config"
 import UsuarioService from "../service/UsuarioService"
 
-const LoginUsuario = () => {
+const CadastrarUsuario = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -13,7 +13,7 @@ const LoginUsuario = () => {
     const acaoBotao = ()=> {
         //console.log(email)
         //console.log(password)
-        UsuarioService.signIn(
+        UsuarioService.signUp(
             auth,
             email,
             password,
@@ -21,11 +21,12 @@ const LoginUsuario = () => {
                 
             }
         )
+       
     }
 
     return (
         <View style={estilos.container}>
-            <Text style={estilos.cabecalho}>Login Usuário</Text>
+            <Text style={estilos.cabecalho}>Cadastrar Usuário</Text>
             <View
                 style={{
                     flex:1,
@@ -59,4 +60,4 @@ const LoginUsuario = () => {
 
 }
 
-export default LoginUsuario
+export default CadastrarUsuario

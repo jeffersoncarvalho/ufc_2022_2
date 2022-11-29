@@ -6,13 +6,17 @@ import ListarEstudante from "./estudante/ListarEstudante";
 import EditarEstudante from "./estudante/EditarEstudante";
 
 import LoginUsuario from "./usuario/LoginUsuario";
-
+import CadastrarUsuario from "./usuario/CadastrarUsuario";
 
 const Stack = createNativeStackNavigator()
 
 const RoutesCrud = ()=> {
     return (
         <Stack.Navigator>
+            <Stack.Screen 
+                name='CadastrarUsuario' 
+                component={CadastrarUsuario} 
+                options={{title:'Cadastrar Usuário'}}/>
             <Stack.Screen 
                 name='LoginUsuario' 
                 component={LoginUsuario} 
