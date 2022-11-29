@@ -5,12 +5,18 @@ import CriarEstudante from "./estudante/CriarEstudante";
 import ListarEstudante from "./estudante/ListarEstudante";
 import EditarEstudante from "./estudante/EditarEstudante";
 
+import LoginUsuario from "./usuario/LoginUsuario";
+
 
 const Stack = createNativeStackNavigator()
 
 const RoutesCrud = ()=> {
     return (
         <Stack.Navigator>
+            <Stack.Screen 
+                name='LoginUsuario' 
+                component={LoginUsuario} 
+                options={{title:'Login Usuário'}}/>
             <Stack.Screen 
                 name='HomeEstudante' 
                 component={HomeEstudante} 
