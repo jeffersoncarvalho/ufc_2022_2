@@ -33,17 +33,6 @@ const EditStudent = (props)=> {
                 },
                 params.id
             )
-            //console.log(params.id)
-            /*axios.get('http://localhost:3001/students/'+params.id)
-            .then(
-                (response)=>{
-                    //console.log(response.data.name)
-                    setName(response.data.name)
-                    setCourse(response.data.course)
-                    setIra(response.data.ira)
-                }
-            )
-            .catch((error)=>console.log(error))*/
         }
         ,
         []

@@ -6,7 +6,7 @@ const estilos = StyleSheet.create({
         flexDirection:'column',
         justifyContent:'flex-start',
         alignItems:'center',
-        marginTop:10
+        marginTop:10,
     },
     cabecalho: {
         fontSize:25,
@@ -19,17 +19,17 @@ const estilos = StyleSheet.create({
         margin:5
     },
     botao: {
-        width:'60%',
+        width:'40%',
         margin:10,
         backgroundColor:'lightblue'
     },
     input: {
         height:45,
-        width:'90%',
+        width:'100%',
         borderColor:'gray',
-        borderWidth:2,
-        paddingLeft:20,
-        margin:10
+        borderWidth:1,
+        paddingLeft:5,
+        margin:5
     }
 })
 

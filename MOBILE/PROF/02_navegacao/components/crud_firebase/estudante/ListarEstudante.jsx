@@ -24,7 +24,7 @@ const ListarEstudante = () => {
 
     return (
         <SafeAreaView style={estilos.container}>
-            <Text style={estilos.cabecalho}>Listar</Text>
+            <Text style={estilos.cabecalho}>Listar Estudantes</Text>
             {console.log(estudantes)}
             <FlatList
                 data={estudantes}
